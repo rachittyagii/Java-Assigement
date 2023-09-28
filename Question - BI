@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); // Input string
+
+        // Check if the string contains only digits
+        boolean containsOnlyDigits = checkIfContainsOnlyDigits(input);
+
+        // Print the result
+        if (containsOnlyDigits) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+
+    // Function to check if a string contains only digits
+    private static boolean checkIfContainsOnlyDigits(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            // Check if the character is not a digit
+            if (!Character.isDigit(ch)) {
+                return false; // String contains a non-digit character
+            }
+        }
+        return true; // String contains only digits
+    }
+}

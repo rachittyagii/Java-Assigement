@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); // Input string
+
+        // Compute the longest proper prefix length and print the result
+        int longestPrefixSuffixLength = computeLongestPrefixSuffixLength(input);
+        System.out.println(longestPrefixSuffixLength);
+    }
+
+    // Function to compute the longest proper prefix length
+    private static int computeLongestPrefixSuffixLength(String s) {
+        int n = s.length();
+        int[] lps = new int[n]; // Array to store the longest proper prefix length
+
+        // Initialize variables
+        int length = 0; // Length of the current matching prefix
+        int i = 1;
+
+        while (i < n) {
+            if (s.charAt(i) == s.charAt(length)) {
+                length++;
+                lps[i] = length;
+                i++;
+            } else {
+                if (length != 0) {
+                    // If there was a previous matching prefix, update the length
+                    length = lps[length - 1];
+                } else {
+                    // No previous matching prefix, set lps[i] to 0
+                    lps[i] = 0;
+                    i++;
+                }
+            }
+        }
+
+        // The length of the longest proper prefix that is also a suffix
+        return lps[n - 1];
+    }
+}

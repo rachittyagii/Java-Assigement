@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); // Input string
+
+        // Initialize strings for odd and even characters
+        StringBuilder oddChars = new StringBuilder();
+        StringBuilder evenChars = new StringBuilder();
+
+        // Iterate through the characters of the input string
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+
+            // Check if the index is odd or even and append the character accordingly
+            if (i % 2 == 0) {
+                evenChars.append(ch);
+            } else {
+                oddChars.append(ch);
+            }
+        }
+
+        // Print the result by concatenating odd and even character strings
+        System.out.println(oddChars.toString() + evenChars.toString());
+    }
+}

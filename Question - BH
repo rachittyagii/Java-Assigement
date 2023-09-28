@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); // Input string
+
+        // Convert the input string to lowercase for case-insensitive comparison
+        input = input.toLowerCase();
+
+        // Check if the string contains only vowels
+        boolean containsOnlyVowels = checkIfContainsOnlyVowels(input);
+
+        // Print the result
+        if (containsOnlyVowels) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+
+    // Function to check if a string contains only vowels
+    private static boolean checkIfContainsOnlyVowels(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            // Check if the character is not a vowel (a, e, i, o, u)
+            if (ch != 'a' && ch != 'e' && ch != 'i' && ch != 'o' && ch != 'u') {
+                return false; // String contains a non-vowel character
+            }
+        }
+        return true; // String contains only vowels
+    }
+}

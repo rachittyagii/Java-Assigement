@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine(); // Input string
+
+        // Initialize a StringBuilder to build the toggled string
+        StringBuilder toggledString = new StringBuilder();
+
+        // Iterate through the characters of the input string
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+
+            // Toggle the case of the character and append it to the StringBuilder
+            if (Character.isUpperCase(ch)) {
+                toggledString.append(Character.toLowerCase(ch));
+            } else if (Character.isLowerCase(ch)) {
+                toggledString.append(Character.toUpperCase(ch));
+            } else {
+                // If it's not a letter, append it as is
+                toggledString.append(ch);
+            }
+        }
+
+        // Print the toggled string
+        System.out.println(toggledString.toString());
+    }
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt(); // Number of test cases
+
+        // Consume the newline character after reading the integer
+        scanner.nextLine();
+
+        for (int i = 0; i < t; i++) {
+            String s = scanner.nextLine(); // Input string
+
+            // Convert the input string to lowercase for case-insensitive comparison
+            s = s.toLowerCase();
+
+            // Check if the string is equal to "yes"
+            if (s.equals("yes")) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+    }
+}
