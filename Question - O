@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt(); // Read the number of test cases
+        
+        for (int i = 0; i < T; i++) {
+            int X = scanner.nextInt(); // Read the battery level
+            String result = checkBatteryLevel(X); // Check if Battery Low notification will be shown
+            System.out.println(result);
+        }
+        
+        scanner.close();
+    }
+    
+    public static String checkBatteryLevel(int X) {
+        if (X <= 15) {
+            return "Yes"; // Battery Low notification will be shown
+        } else {
+            return "No"; // Battery Low notification will not be shown
+        }
+    }
+}

@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int T = scanner.nextInt();
+
+        for (int t = 0; t < T; t++) {
+            // Read N for the current test case
+            int N = scanner.nextInt();
+
+            // Calculate the total income
+            int totalIncome = N * 50; // Selling price is 50 coins per glass
+
+            // Calculate the expenses
+            int sugarcaneExpense = (totalIncome * 20) / 100;
+            int saltMintExpense = (totalIncome * 20) / 100;
+            int rentExpense = (totalIncome * 30) / 100;
+
+            // Calculate the profit
+            int profit = totalIncome - (sugarcaneExpense + saltMintExpense + rentExpense);
+
+            System.out.println(profit);
+        }
+    }
+}

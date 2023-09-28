@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int T = scanner.nextInt();
+
+        for (int t = 0; t < T; t++) {
+            // Read N and X for the current test case
+            int N = scanner.nextInt();
+            int X = scanner.nextInt();
+
+            // Calculate the total number of slices needed
+            int totalSlicesNeeded = N * X;
+
+            // Calculate the minimum number of pizzas required
+            int pizzasNeeded = (int) Math.ceil((double) totalSlicesNeeded / 4);
+
+            System.out.println(pizzasNeeded);
+        }
+    }
+}
