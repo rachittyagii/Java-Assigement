@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the value of N from input
+        int N = scanner.nextInt();
+
+        // Initialize variables to store the first two Fibonacci numbers
+        int a = 1, b = 1;
+
+        // Initialize a variable to store the result
+        int result = 0;
+
+        // Calculate the Nth Fibonacci number
+        if (N == 1 || N == 2) {
+            result = 1;
+        } else {
+            for (int i = 3; i <= N; i++) {
+                result = a + b;
+                a = b;
+                b = result;
+            }
+        }
+
+        // Print the result
+        System.out.println(result);
+    }
+}

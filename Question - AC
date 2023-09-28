@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the value of N from input
+        int N = scanner.nextInt();
+
+        // Convert N to a string to calculate the number of digits
+        String numStr = String.valueOf(N);
+        int numDigits = numStr.length();
+
+        // Initialize a variable to store the sum of cubes of digits
+        int sumOfCubes = 0;
+        int tempN = N; // Create a copy of N to extract digits
+
+        // Calculate the sum of cubes of digits
+        while (tempN > 0) {
+            int digit = tempN % 10;
+            sumOfCubes += Math.pow(digit, numDigits);
+            tempN /= 10;
+        }
+
+        // Check if N is an Armstrong number
+        if (sumOfCubes == N) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}

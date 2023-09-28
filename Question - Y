@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read N from input
+        int N = scanner.nextInt();
+
+        // Calculate the sum of squares of the first N natural numbers
+        int sum = 0;
+        for (int i = 1; i <= N; i++) {
+            sum += i * i;
+        }
+
+        // Print the sum of squares
+        System.out.println(sum);
+    }
+}
