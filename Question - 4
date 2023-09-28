@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the lengths of the three sides
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+        int C = scanner.nextInt();
+
+        // Check if it's possible to form a triangle
+        boolean isValid = isValidTriangle(A, B, C);
+
+        // Print the result
+        if (isValid) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        scanner.close();
+    }
+
+    // Function to check if it's possible to form a triangle
+    public static boolean isValidTriangle(int A, int B, int C) {
+        return (A + B > C) && (B + C > A) && (A + C > B);
+    }
+}
