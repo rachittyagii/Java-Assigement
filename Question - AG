@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the three-digit number 'n' from input
+        int n = scanner.nextInt();
+
+        // Convert 'n' to a string
+        String nStr = String.valueOf(n);
+
+        // Append "3" to the left and right of the string
+        String resultStr = "3" + nStr + "3";
+
+        // Convert the resulting string back to an integer
+        int result = Integer.parseInt(resultStr);
+
+        // Print the resulting number
+        System.out.println(result);
+    }
+}
