@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int T = scanner.nextInt();
+
+        for (int t = 0; t < T; t++) {
+            // Read the integer N for the current test case
+            int N = scanner.nextInt();
+
+            // Check if N is less than 10
+            if (N < 10) {
+                System.out.println("Thanks for helping Chef!");
+            } else {
+                System.out.println("-1");
+            }
+        }
+    }
+}

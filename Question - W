@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read N from input
+        int N = scanner.nextInt();
+
+        // Calculate the factorial of N
+        int factorial = 1;
+        for (int i = 2; i <= N; i++) {
+            factorial *= i;
+        }
+
+        // Print the factorial of N
+        System.out.println(factorial);
+    }
+}
