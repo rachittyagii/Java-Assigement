@@ -1,0 +1,10 @@
+# Function to calculate the sum of squares of two numbers
+def sum_of_squares(a, b):
+    return a**2 + b**2
+
+# Input two integers a and b
+a, b = map(int, input().split())
+
+# Calculate and print the sum of squares
+result = sum_of_squares(a, b)
+print(result)

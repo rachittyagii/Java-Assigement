@@ -1,0 +1,40 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramChecker {
+    // Function to check if two strings are anagrams
+    public static boolean areAnagrams(String str1, String str2) {
+        // Remove spaces and convert both strings to lowercase
+        str1 = str1.replaceAll("\\s", "").toLowerCase();
+        str2 = str2.replaceAll("\\s", "").toLowerCase();
+
+        // Check if the lengths of the strings are the same
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        // Sort both strings and compare them
+        char[] charArray1 = str1.toCharArray();
+        char[] charArray2 = str2.toCharArray();
+        Arrays.sort(charArray1);
+        Arrays.sort(charArray2);
+
+        return Arrays.equals(charArray1, charArray2);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline character after the integer
+
+        for (int i = 0; i < T; i++) {
+            String str1 = scanner.next();
+            String str2 = scanner.next();
+
+            boolean result = areAnagrams(str1, str2);
+            System.out.println(result ? "True" : "False");
+        }
+
+        scanner.close();
+    }
+}
