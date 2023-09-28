@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the length and breadth of the rectangle
+        int length = scanner.nextInt();
+        int breadth = scanner.nextInt();
+
+        // Calculate the area of the rectangle
+        long area = (long) length * breadth;
+
+        // Print the area
+        System.out.println(area);
+
+        scanner.close();
+    }
+}
