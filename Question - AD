@@ -1,33 +1,11 @@
+# Read the integer 'n' from input
+n = int(input())
 
-import java.util.Scanner;
+# Check if 'n' is odd or even
+if n % 2 == 1:
+    n += 1  # Increment by 1 to make it even
+else:
+    n += 2  # Increment by 2 to get the next even number
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Read the value of N from input
-        int N = scanner.nextInt();
-
-        // Convert N to a string to calculate the number of digits
-        String numStr = String.valueOf(N);
-        int numDigits = numStr.length();
-
-        // Initialize a variable to store the sum of digits raised to the power of numDigits
-        int sumOfPowers = 0;
-        int tempN = N; // Create a copy of N to extract digits
-
-        // Calculate the sum of digits raised to the power of numDigits
-        while (tempN > 0) {
-            int digit = tempN % 10;
-            sumOfPowers += Math.pow(digit, numDigits);
-            tempN /= 10;
-        }
-
-        // Check if N is a Narcissistic number
-        if (sumOfPowers == N) {
-            System.out.println("Yes");
-        } else {
-            System.out.println("No");
-        }
-    }
-}
+# Print the next even integer
+print(n)
