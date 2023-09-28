@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String inputLine = scanner.nextLine();
+        String[] inputTokens = inputLine.split(" ");
+        
+        int[] numbers = new int[100]; // Array to store the integers (initialize with zeros)
+
+
+        for (String token : inputTokens) {
+            int num = Integer.parseInt(token);
+            numbers[num - 1] = num;
+        }
+        int missingNumber = findMissingNumber(numbers);
+        System.out.println(missingNumber);
+
+        scanner.close();
+    }
+
+    public static int findMissingNumber(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == 0) {
+                return i + 1; // Missing number
+            }
+        }
+        return -1; // No missing number found
+    }
+}
