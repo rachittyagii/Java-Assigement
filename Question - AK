@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the four-digit positive integer
+        int n = scanner.nextInt();
+
+        // Extract the middle two digits
+        int middleDigits = (n / 10) % 100;
+
+        // Print the resulting integer without leading zeroes
+        System.out.println(middleDigits);
+    }
+}

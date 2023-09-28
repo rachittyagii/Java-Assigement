@@ -1,0 +1,62 @@
+import java.util.*;
+
+class ChefOfTheYear {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int M = scanner.nextInt();
+        scanner.nextLine(); // Consume the newline
+
+        Map<String, String> chefCountry = new HashMap<>();
+        Map<String, Integer> votes = new HashMap<>();
+        Map<String, Integer> countryVotes = new HashMap<>();
+        Map<String, Integer> chefVotes = new HashMap<>();
+
+        for (int i = 0; i < N; i++) {
+            String[] input = scanner.nextLine().split(" ");
+            String chef = input[0];
+            String country = input[1];
+            chefCountry.put(chef, country);
+        }
+
+        for (int i = 0; i < M; i++) {
+            String vote = scanner.nextLine();
+            votes.put(vote, votes.getOrDefault(vote, 0) + 1);
+        }
+
+        scanner.close();
+
+        int maxCountryVotes = -1;
+        String winningCountry = "";
+
+        for (String vote : votes.keySet()) {
+            String country = chefCountry.get(vote);
+            int count = votes.get(vote);
+
+            countryVotes.put(country, countryVotes.getOrDefault(country, 0) + count);
+            chefVotes.put(vote, chefVotes.getOrDefault(vote, 0) + count);
+
+            if (countryVotes.get(country) > maxCountryVotes) {
+                maxCountryVotes = countryVotes.get(country);
+                winningCountry = country;
+            } else if (countryVotes.get(country) == maxCountryVotes && country.compareTo(winningCountry) < 0) {
+                winningCountry = country;
+            }
+        }
+
+        int maxChefVotes = -1;
+        String winningChef = "";
+
+        for (String vote : votes.keySet()) {
+            if (chefVotes.get(vote) > maxChefVotes) {
+                maxChefVotes = chefVotes.get(vote);
+                winningChef = vote;
+            } else if (chefVotes.get(vote) == maxChefVotes && vote.compareTo(winningChef) < 0) {
+                winningChef = vote;
+            }
+        }
+
+        System.out.println(winningCountry);
+        System.out.println(winningChef);
+    }
+}

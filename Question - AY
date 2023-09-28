@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int N = scanner.nextInt(); // Input the size of the array
+        int[] arr = new int[N]; // Create an array to store the elements
+
+        for (int i = 0; i < N; i++) {
+            arr[i] = scanner.nextInt(); // Input the elements of the array
+        }
+
+        int maximumElement = findMaximum(arr); // Find the maximum element
+
+        System.out.println(maximumElement); // Output the maximum element
+    }
+
+    public static int findMaximum(int[] arr) {
+        int maxElement = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxElement) {
+                maxElement = arr[i];
+            }
+        }
+
+        return maxElement;
+    }
+}

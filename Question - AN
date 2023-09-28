@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the integer x
+        int x = scanner.nextInt();
+
+        // Calculate the cube of x
+        int cube = x * x * x;
+
+        // Print the result
+        System.out.println(cube);
+
+        // Close the scanner
+        scanner.close();
+    }
+}

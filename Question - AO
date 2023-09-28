@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the length (a) and breadth (b) of the rectangle
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+
+        // Calculate the area and perimeter
+        int area = a * b;
+        int perimeter = 2 * (a + b);
+
+        // Print the results separated by a single space
+        System.out.println(area + " " + perimeter);
+
+        // Close the scanner
+        scanner.close();
+    }
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int caseNumber = 1;
+
+        while (true) {
+            int x = scanner.nextInt();
+            
+            // Check if x is the terminal symbol (0)
+            if (x == 0) {
+                break;
+            }
+
+            // Print the result in the specified format
+            System.out.println("Case " + caseNumber + ": " + x);
+
+            // Increment the case number
+            caseNumber++;
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}

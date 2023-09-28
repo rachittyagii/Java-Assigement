@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read three integers
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        // Sort the integers in ascending order
+        int min, middle, max;
+
+        if (a < b) {
+            if (a < c) {
+                min = a;
+                if (b < c) {
+                    middle = b;
+                    max = c;
+                } else {
+                    middle = c;
+                    max = b;
+                }
+            } else {
+                min = c;
+                middle = a;
+                max = b;
+            }
+        } else {
+            if (b < c) {
+                min = b;
+                if (a < c) {
+                    middle = a;
+                    max = c;
+                } else {
+                    middle = c;
+                    max = a;
+                }
+            } else {
+                min = c;
+                middle = b;
+                max = a;
+            }
+        }
+
+        // Print the integers in ascending order
+        System.out.printf("%d %d %d%n", min, middle, max);
+
+        // Close the scanner
+        scanner.close();
+    }
+}

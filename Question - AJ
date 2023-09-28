@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the non-negative integer as a string
+        String numberStr = scanner.nextLine();
+
+        // Check divisibility by 2, 4, and 8 using a single function
+        boolean divisibleBy2 = isDivisibleBy(numberStr, 2);
+        boolean divisibleBy4 = isDivisibleBy(numberStr, 4);
+        boolean divisibleBy8 = isDivisibleBy(numberStr, 8);
+
+        // Print the results
+        System.out.println(divisibleBy2 ? "Yes" : "No");
+        System.out.println(divisibleBy4 ? "Yes" : "No");
+        System.out.println(divisibleBy8 ? "Yes" : "No");
+    }
+
+    // Function to check if a number is divisible by a given divisor
+    private static boolean isDivisibleBy(String numberStr, int divisor) {
+        int lastDigits = Integer.parseInt(numberStr.substring(Math.max(0, numberStr.length() - 3)));
+        return lastDigits % divisor == 0;
+    }
+}

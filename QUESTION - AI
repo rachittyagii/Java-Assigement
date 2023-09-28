@@ -3,12 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int digit1 = n / 100;        
-        int digit2 = (n / 10) % 10;   
-        int digit3 = n % 10;
-        int sum = digit1 + digit2 + digit3;
-        int product = digit1 * digit2 * digit3;
-        System.out.println(sum + " " + product);
+
+        // Read the four-digit positive integer
+        int number = scanner.nextInt();
+
+        // Extract the first and last digits
+        int firstDigit = number / 1000;  // Thousands place
+        int lastDigit = number % 10;     // Ones place
+
+        // Calculate the sum of the first and the last digit
+        int sum = firstDigit + lastDigit;
+
+        // Print the sum
+        System.out.println(sum);
     }
 }

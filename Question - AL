@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the four-digit positive integer
+        int n = scanner.nextInt();
+
+        // Extract the first and last digits
+        int firstDigit = n / 1000; // Thousands place
+        int lastDigit = n % 10;    // Ones place
+
+        // Extract the middle two digits
+        int middleDigits = (n / 10) % 100;
+
+        // Swap the first and last digits and reassemble the number
+        int swappedNumber = lastDigit * 1000 + middleDigits * 10 + firstDigit;
+
+        // Print the resulting number
+        System.out.println(swappedNumber);
+    }
+}

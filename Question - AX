@@ -1,0 +1,16 @@
+from collections import Counter
+
+def custom_sort(arr):
+    count = Counter(arr)
+    return sorted(arr, key=lambda x: (-count[x], arr.index(x)))
+
+def main():
+    N, M = map(int, input().split())
+    arr = list(map(int, input().split()))
+
+    sorted_arr = custom_sort(arr)
+    
+    print(" ".join(map(str, sorted_arr)))
+
+if __name__ == "__main__":
+    main()

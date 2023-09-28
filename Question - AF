@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = scanner.nextInt();
+        digits(number);
+        sc.close(); // Close the scanner object
+
+    }
+
+    public static void digits(int number) {
+        int hundreds = Math.abs(number / 100);
+        int tens = (Math.abs(number) / 10) % 10;
+        int units = Math.abs(number) % 10;
+        System.out.println(hundreds);
+        System.out.println(tens);
+        System.out.println(units);
+    }
+}

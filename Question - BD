@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt(); // Size of the array
+        int K = scanner.nextInt(); // Search key
+        int[] array = new int[N]; // Array to store elements
+
+        // Input elements into the array
+        for (int i = 0; i < N; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Perform linear search
+        int index = linearSearch(array, K);
+
+        // Output the result
+        if (index != -1) {
+            System.out.println(index);
+        } else {
+            System.out.println(-1);
+        }
+    }
+
+    // Linear search function
+    private static int linearSearch(int[] array, int key) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == key) {
+                return i; // Key found at index i
+            }
+        }
+        return -1; // Key not found in the array
+    }
+}
